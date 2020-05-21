@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './style/index.scss';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NoteApp from './pages/NoteApp'
+import HomePage from './pages/HomePage'
+import Toolbar from './components/navigation/Toolbar/Toolbar';
+import SideDrawer from './components/navigation/SideDrawer/SideDrawer';
+import Backdrop from './components/navigation/Backdrop/Backdrop';
+const history = createBrowserHistory();
+
+
+class App extends Component {
+  state = { sideDrawerOpen: false };
+
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
+
+  render() {
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
+    return (
+      <div className="App">
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+        <Router history={history}>
+          <Switch>
+            <Route path="/" component={HomePage} exact></Route>
+            <Route path="/noteApp" component={NoteApp} />
+          </Switch>
+        </Router>
+      </div>
+    )
+  }
 }
 
 export default App;

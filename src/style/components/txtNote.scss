@@ -1,0 +1,39 @@
+.card {
+    overflow-wrap: break-word;
+    border-radius: 5px;
+    display: inline-block;
+    min-height: 144px;
+    margin: 1rem;
+    position: relative;
+    padding: 15px;
+    width: 238px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-title{
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+
+  .card-link{
+      color: black;
+  }
+
+.red {
+    background-color: rgb(224, 63, 63);
+}
+.blue {
+    background-color: rgb(100, 100, 199);
+}
+.green {
+    background-color: rgb(85, 194, 85);
+}
+.yellow {
+    background-color: rgb(213, 213, 66);
+}
+
