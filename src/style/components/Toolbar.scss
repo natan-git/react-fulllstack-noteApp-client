@@ -48,6 +48,9 @@
 }
 
 @media (max-width: 768px) {
+  .toolbar {
+    width: 100%;
+  }
   .toolbar_navigation-items {
     display: none;
   }
@@ -57,6 +60,9 @@
 }
 
 @media (min-width: 769px) {
+  .toolbar {
+    width: 100%;
+  }
   .toolbar__toggle-button {
     display: none;
   }
@@ -64,5 +70,4 @@
   .toolbar__logo {
     margin-left: 0;
   }
-
 }

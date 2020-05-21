@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fethUser } from '../../../actions/userAction';
 import { connect } from 'react-redux';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
-import './Toolbar.css';
+import '../../../style/components/Toolbar.scss';
 
 class toolbar extends Component {
   state = {};
