@@ -1,67 +1,79 @@
-.noteDetails-container{
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    padding: 1.2rem;
-    width: 40%;
-    height: 30%;
-    border-radius: 5px;
-    z-index: 2;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
+.noteDetails-container {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  padding: 1.2rem;
+  width: 40%;
+  height: 30%;
+  border-radius: 5px;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.screen{
-    
-    z-index: 1;
-    background-color: rgba(235, 235, 235, 0.884);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.screen {
+  z-index: 1;
+  background-color: rgba(235, 235, 235, 0.884);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .noteBody-container {
-    height: 80%;
+  height: 80%;
 }
 
 .noteIcons-container {
-    height: 20%;
+  height: 20%;
 }
 
-.noteIcons-container >*:not(:first-child) {
-    margin-left: 1rem;
+.noteIcons-container > *:not(:first-child) {
+  margin-left: 1rem;
 }
 
 .redbtn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-    margin: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0.3rem;
 }
 
 .bluebtn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: blue;
-    margin: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0.3rem;
 }
 .greenbtn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: green;
-    margin: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+  margin: 0.3rem;
 }
 .yellowbtn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: yellow;
-    margin: 0.3rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin: 0.3rem;
 }
 
+@media (max-width: 768px) {
+  .noteDetails-container {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    padding: 1.2rem;
+    width: 70%;
+    height: 30%;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
