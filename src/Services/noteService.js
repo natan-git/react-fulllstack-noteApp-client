@@ -8,6 +8,7 @@ export default {
 }
 
 
+
 async function query(search) {
     const notesToRender = await axios.get('http://localhost:5000/api/note').then(res => res.data);
     return notesToRender;
