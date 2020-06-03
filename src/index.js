@@ -1,13 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware, combineReducers, compose } from "redux";
-import ReduxThunk from "redux-thunk";
-import { noteReducer } from "./reducers/noteReducer";
-import { authReducer } from "./reducers/authReducer";
-import "./style/index.scss";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import { noteReducer } from './reducers/noteReducer';
+import { authReducer } from './reducers/authReducer';
+import './style/index.scss';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -23,9 +24,11 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
