@@ -1,7 +1,7 @@
 import './style/index.scss';
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import NoteApp from './pages/NoteApp';
