@@ -7,32 +7,39 @@ export default {
     save
 }
 
+const BASE_URL = process.env.NODE_ENV === 'production'
+    ? '/api/'
+    : 'http://localhost:5000/api/'
+
 
 
 async function query(search) {
-    const notesToRender = await axios.get('http://localhost:5000/api/note').then(res => res.data);
+    const notesToRender = await axios.get(`${BASE_URL}note`).then(res => res.data);
     return notesToRender;
 }
 
 async function getNoteById(noteId) {
-    const notes = await axios.get('http://localhost:5000/api/note').then(res => res.data);   
+    const notes = await axios.get(`${BASE_URL}note`).then(res => res.data);   
     const note = notes.find((note) => note._id === noteId)
     return { ...note }
 }
 
  function remove(noteId) {
-    return axios.delete(`http://localhost:5000/api/note/${noteId}`);   
+    return axios.delete(`${BASE_URL}note/${noteId}`);   
 }
+//  function remove(noteId) {
+//     return axios.delete(`http://localhost:5000/api/note/${noteId}`);   
+// }
 
 
 async function save(noteEdit) {
     console.log('save -> noteEdit', noteEdit)
     
     if (noteEdit._id) {
-        await axios.put(`http://localhost:5000/api/note/${noteEdit._id}`, {...noteEdit}).then(res => res.data);   
+        await axios.put(`${BASE_URL}note/${noteEdit._id}`, {...noteEdit}).then(res => res.data);   
     } else {
         console.log('noteEdit', noteEdit);
-        const res = await axios.post('http://localhost:5000/api/note', noteEdit).then(res => res.data);  
+        const res = await axios.post(`${BASE_URL}note`, noteEdit).then(res => res.data);  
         return res; 
     }
     // return Promise.resolve({ ...noteEdit });
